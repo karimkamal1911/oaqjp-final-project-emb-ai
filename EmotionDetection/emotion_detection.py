@@ -22,7 +22,7 @@ def emotion_detector(text_to_analyze):
     header = {
         "grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"
     }
-    
+
     response = requests.post(url, json=myobj, headers=header, timeout=30)
     return response.text
 
@@ -41,7 +41,7 @@ def emotion_predictor(text_to_analyze):
         "grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"
     }
     data = {"raw_document": {"text": text_to_analyze}}
-    
+
     response = requests.post(
         url,
         json=data,
@@ -56,10 +56,10 @@ def emotion_predictor(text_to_analyze):
             'dominant_emotion': None,
             'dominant_emotion_score': None
         }
-    
+
     dominant_emotion = max(emotions, key=emotions.get)
     dominant_score = emotions[dominant_emotion]
-    
+
     return {
         'dominant_emotion': dominant_emotion,
         'dominant_emotion_score': dominant_score
