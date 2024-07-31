@@ -23,7 +23,7 @@ def emotion_detector(text_to_analyze):
         "grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"
     }
     
-    response = requests.post(url, json=myobj, headers=header, timeout=10)
+    response = requests.post(url, json=myobj, headers=header, timeout=30)
     return response.text
 
 def emotion_predictor(text_to_analyze):
@@ -46,7 +46,7 @@ def emotion_predictor(text_to_analyze):
         url,
         json=data,
         headers=header,
-        timeout=10
+        timeout=30
     )
     formatted_response = response.json()
     emotions = formatted_response.get('emotionPredictions', [{}])[0].get('emotion', {})
