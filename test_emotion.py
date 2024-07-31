@@ -2,10 +2,6 @@ import unittest
 from EmotionDetection import emotion_predictor
 
 class testEmotionDetection(unittest.TestCase):
-
-    def test_joy(self):
-        dominant_emotion, _ = emotion_predictor("I am glad this happened")
-        self.assertEqual(dominant_emotion, "joy", "Expect 'joy' but got something else!")
     
     def test_joy(self):
         dominant_emotion, _ = emotion_predictor("I am glad this happened")
