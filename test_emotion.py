@@ -28,4 +28,4 @@ class testEmotionDetection(unittest.TestCase):
         self.assertEqual(dominant_emotion, "fear", "Expect 'fear' but got something else!")
 
 if __name__ == '__main__':
-    unittest.main
+    unittest.main()
